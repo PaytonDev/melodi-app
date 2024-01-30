@@ -1,0 +1,4 @@
+.menu-item:hover {
+  background-color: var(--chakra-colors-black);
+  color: var(--chakra-colors-gray-200);
+}
