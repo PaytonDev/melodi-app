@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { artistData } from "../../data/mock-data";
 
 import { MusicCard } from "./MusicCard";
 
@@ -18,4 +19,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    header: artistData[0].name,
+    subheader: artistData[0].albums[0].name,
+    description: "2021",
+    image: artistData[0].albums[0].image,
+    imageSize: "150px",
+    imageAlt: artistData[0].albums[0].name,
+  },
+};

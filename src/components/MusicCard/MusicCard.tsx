@@ -1,23 +1,35 @@
 import { Card, CardBody, Stack, Image, Text } from "@chakra-ui/react";
-import { artistData } from "../../data/mock-data";
 
-export const MusicCard = () => {
-  const { name, albums } = artistData[0];
+type MusicCardProps = {
+  header: string;
+  subheader: string;
+  description?: string;
+  image: string;
+  imageSize: string;
+  imageAlt: string;
+  className?: string;
+  width?: string;
+};
+
+export const MusicCard = ({
+  header,
+  subheader,
+  description,
+  image,
+  imageSize,
+  width = "300px",
+  imageAlt,
+  className,
+}: MusicCardProps) => {
   return (
-    <Card bg="gray.200" boxShadow="md" minWidth="275px">
+    <Card bg="gray.200" boxShadow="md" minWidth={width} className={className}>
       <CardBody>
-        <Image
-          src={"https://upload.wikimedia.org/wikipedia/en/1/1b/Adele_-_21.png"}
-          alt={albums[0].name}
-          width="250px"
-          height="250px"
-          borderRadius="md"
-        />
+        <Image src={image} alt={imageAlt} width={imageSize} height={imageSize} borderRadius="md" />
         <Stack direction="column" spacing={1} mt="4">
-          <Text fontWeight="bold">{name}</Text>
-          <Text fontWeight="medium">{albums[0].name}</Text>
+          <Text fontWeight="bold">{header}</Text>
+          <Text fontWeight="medium">{subheader}</Text>
           <Text fontSize="xs" fontWeight="light">
-            2021
+            {description}
           </Text>
         </Stack>
       </CardBody>

@@ -3,3 +3,4 @@ export { MusicCard } from "./MusicCard/MusicCard";
 export { MusicBar } from "./MusicBar/MusicBar";
 export { NavigationBar } from "./NavigationBar/NavigationBar";
 export { NavigationUtility } from "./NavigationUtility/NavigationUtility";
+export { Carousel } from "./Carousel/Carousel";
