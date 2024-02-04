@@ -1,16 +1,45 @@
 import { Flex, Box, Text, IconButton } from "@chakra-ui/react";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { MusicCard } from "..";
-import { artistData } from "../../data/mock-data";
+import s from "./carousel.module.css";
 
-export const Carousel = () => {
-  const songs = artistData[0].albums[0].songs;
+type Item = {
+  id: string;
+  header: string;
+  subheader: string;
+  description: string;
+  image: string;
+  imageSize: number;
+  imageAlt: string;
+  width?: number;
+};
+
+type CarouselProps = {
+  header: string;
+  items: Item[];
+  width?: string;
+};
+
+export const Carousel = ({ items, width = "100%", header }: CarouselProps) => {
+  const carouselShift = items[0].width ? items[0].width : 320;
+
+  const shiftCarousel = (direction: string) => {
+    const carousel = document.getElementById("carousel");
+    if (carousel) {
+      carousel.style.scrollBehavior = "smooth";
+      if (direction === "left") {
+        carousel.scrollLeft -= carouselShift;
+      } else {
+        carousel.scrollLeft += carouselShift;
+      }
+    }
+  };
 
   return (
-    <Box>
-      <Flex direction="row" justify="space-between" width="100%">
-        <Text fontSize="3xl" fontWeight="bold">
-          Latest Releases
+    <Box width={width} maxWidth="100vw">
+      <Flex direction="row" justify="space-between">
+        <Text fontSize="2xl" fontWeight="bold">
+          {header}
         </Text>
         <Flex>
           <IconButton
@@ -19,6 +48,7 @@ export const Carousel = () => {
             variant="ghost"
             colorScheme="blackAlpha"
             size="lg"
+            onClick={() => shiftCarousel("left")}
           />
           <IconButton
             aria-label="Next"
@@ -26,6 +56,7 @@ export const Carousel = () => {
             variant="ghost"
             colorScheme="blackAlpha"
             size="lg"
+            onClick={() => shiftCarousel("right")}
           />
         </Flex>
       </Flex>
@@ -35,14 +66,27 @@ export const Carousel = () => {
         overflowX="scroll"
         overflowY="hidden"
         gap="3"
+        id="carousel"
         sx={{
           "&::-webkit-scrollbar": {
             display: "none",
           },
         }}
       >
-        {songs.map((song) => (
-          <MusicCard key={song.id} />
+        {items.map((item: Item) => (
+          <>
+            <MusicCard
+              key={item.id}
+              header={item.header}
+              subheader={item.subheader}
+              description="2021"
+              imageSize={`${item.imageSize} px`}
+              image={item.image}
+              imageAlt={item.subheader}
+              className={s.slide}
+              width={item.width ? `${item.width}px` : undefined}
+            />
+          </>
         ))}
       </Flex>
     </Box>
