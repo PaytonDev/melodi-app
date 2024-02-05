@@ -19,7 +19,7 @@ const mockSong = {
 const NowPlaying = () => {
   return (
     <Box maxWidth="30%">
-      <Flex direction="column" align="start" borderBottomWidth="1px" bg="gray.200">
+      <Flex direction="column" align="start">
         <Flex direction="row" align="center" gap={2}>
           <Text>{mockSong.title}</Text>
           <IconButton icon={<FavoriteBorder />} size="xs" aria-label="menu" background="none" />
@@ -39,10 +39,20 @@ const NowPlaying = () => {
 const NowPlayingUtils = () => {
   return (
     <Box maxWidth="30%">
-      <Flex direction="row" align="center" justify="space-between" gap={4}>
-        <IconButton icon={<VolumeUpOutlined />} aria-label="volume" background="none" />
-        <IconButton icon={<SpeakerGroupOutlined />} aria-label="speaker" background="none" />
-        <IconButton icon={<MenuOutlined />} aria-label="favorite" background="none" />
+      <Flex direction="row" align="center" justify="space-between" gap={4} color="white">
+        <IconButton
+          icon={<VolumeUpOutlined />}
+          aria-label="volume"
+          background="none"
+          color="white"
+        />
+        <IconButton
+          icon={<SpeakerGroupOutlined />}
+          aria-label="speaker"
+          background="none"
+          color="white"
+        />
+        <IconButton icon={<MenuOutlined />} aria-label="favorite" background="none" color="white" />
         <IconButton
           icon={<KeyboardArrowUpOutlined />}
           aria-label="speaker"
@@ -63,7 +73,6 @@ export const MusicBar = () => {
       left={0}
       width="100%"
       height="100px"
-      bg="gray.200"
       paddingX={4}
       paddingY={2}
       zIndex={10}
@@ -75,7 +84,6 @@ export const MusicBar = () => {
         width="100%"
         height="100%"
         borderTopWidth="1px"
-        bg="gray.200"
       >
         <NowPlaying />
         <MusicPlayer />

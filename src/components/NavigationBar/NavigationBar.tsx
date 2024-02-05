@@ -4,7 +4,7 @@ import s from "./navigation-bar.module.css";
 
 export const NavigationBar = () => {
   return (
-    <Box height="calc(100vh - 100px)" bg="gray.200" minWidth="200px" overflow="auto">
+    <Box height="calc(100vh - 100px)" minWidth="200px" overflow="auto" borderRightWidth="1px">
       <Flex
         height="100%"
         direction="column"

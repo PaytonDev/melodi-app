@@ -29,23 +29,44 @@ export const MusicPlayer = () => {
   const PlayIcon = () => <Icon as={PlayingIcon} boxSize="2em" />;
 
   return (
-    <Box borderWidth="2px" paddingX={4} paddingY={3} borderRadius="lg">
+    <Box padding={3} borderRadius="lg">
       <Box>
         <Flex direction="row" gap={4} align="center">
-          <IconButton icon={<ShuffleIcon />} aria-label="shuffle songs" background="none" />
-          <IconButton icon={<SkipPreviousIcon />} aria-label="previous song" background="none" />
+          <IconButton
+            icon={<ShuffleIcon />}
+            aria-label="shuffle songs"
+            background="none"
+            color="white"
+          />
+          <IconButton
+            icon={<SkipPreviousIcon />}
+            aria-label="previous song"
+            background="none"
+            color="white"
+          />
           <IconButton
             icon={<PlayIcon />}
             aria-label={`${isPlaying ? "pause" : "play"} song`}
             onClick={() => setIsPlaying(!isPlaying)}
             background="none"
+            color="white"
           />
-          <IconButton icon={<SkipNextIcon />} aria-label="skip song" background="none" />
-          <IconButton icon={<RepeatIcon />} aria-label="replay song" background="none" />
+          <IconButton
+            icon={<SkipNextIcon />}
+            aria-label="skip song"
+            background="none"
+            color="white"
+          />
+          <IconButton
+            icon={<RepeatIcon />}
+            aria-label="replay song"
+            background="none"
+            color="white"
+          />
         </Flex>
         <Slider aria-label="slider-ex-1" defaultValue={30}>
           <SliderTrack>
-            <SliderFilledTrack bg="gray.700" />
+            <SliderFilledTrack />
           </SliderTrack>
           <SliderThumb />
         </Slider>
