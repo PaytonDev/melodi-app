@@ -1,10 +1,12 @@
 import type { Preview } from "@storybook/react";
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
 import { theme } from "./theme/theme";
 
 const preview: Preview = {
   parameters: {
-    chakra: { theme: extendTheme(theme) },
+    chakra: {
+      theme: extendTheme(withDefaultColorScheme({ colorScheme: "teal" })),
+    },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {

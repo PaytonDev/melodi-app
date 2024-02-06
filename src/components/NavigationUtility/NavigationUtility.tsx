@@ -16,7 +16,6 @@ export const NavigationUtility = () => {
       paddingX={4}
       paddingY={2}
       borderBottomWidth="1px"
-      bg="gray.200"
     >
       <Flex direction="row" align="center" justify="start" gap={2}>
         <IconButton
