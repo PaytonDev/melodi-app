@@ -3,7 +3,7 @@ import { LoginField } from "../../components/LoginField/LoginField";
 
 export const Login = () => {
   return (
-    <Flex direction="column" align="center" justify="center" h="100vh" bg="blackAlpha.800">
+    <Flex direction="column" align="center" justify="center" h="100vh">
       <Box position="absolute" top="0" width="100%" py={4} px={8}>
         <Flex direction="row" justify="space-between" width="100%" height="100%">
           <Text fontSize="2xl" fontWeight="bold">
@@ -21,9 +21,6 @@ export const Login = () => {
           </Menu>
         </Flex>
       </Box>
-      <Text fontSize="3xl" fontWeight="bold" mb="4">
-        Login
-      </Text>
       <LoginField />
     </Flex>
   );

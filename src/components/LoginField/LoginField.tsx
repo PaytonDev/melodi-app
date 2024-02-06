@@ -1,4 +1,4 @@
-import { Box, Flex, Input, Button, Link, Collapse, useDisclosure } from "@chakra-ui/react";
+import { Box, Flex, Input, Button, Link, Collapse, useDisclosure, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
 export const LoginField = () => {
@@ -22,6 +22,9 @@ export const LoginField = () => {
 
   return (
     <Box p={8} borderRadius="md" maxW="500px">
+      <Text fontSize="3xl" fontWeight="bold" mb="8" textAlign={"center"}>
+        {!isOpen ? "Login" : "Sign Up"}
+      </Text>
       <Collapse in={isOpen} animateOpacity transition={{ exit: { duration: 0.75 } }}>
         {isOpen && (
           <>
@@ -52,7 +55,7 @@ export const LoginField = () => {
         onChange={handleChange}
       />
       <Flex direction="row" justify="space-between" align="center">
-        <Button onClick={handleLogin}>Login</Button>
+        <Button onClick={handleLogin}>{!isOpen ? "Login" : "Sign Up"}</Button>
         <Link fontSize="sm" mr="2" onClick={onToggle}>
           {!isOpen ? "Need to sign up?" : "Logging in?"}
         </Link>
