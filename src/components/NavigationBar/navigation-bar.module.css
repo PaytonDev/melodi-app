@@ -1,4 +1,6 @@
-.menu-item:hover {
-  background-color: var(--chakra-colors-black);
-  color: var(--chakra-colors-gray-200);
+.menu-item-link:hover {
+  background-color: var(--chakra-colors-gray-600);
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: var(--chakra-colors-teal-200);
 }

@@ -9,7 +9,7 @@ type Item = {
   subheader: string;
   description: string;
   image: string;
-  imageSize: number;
+  imageSize?: number;
   imageAlt: string;
   width?: number;
 };
@@ -24,7 +24,7 @@ export const Carousel = ({ items, width = "100%", header }: CarouselProps) => {
   const carouselShift = items[0].width ? items[0].width : 320;
 
   const shiftCarousel = (direction: string) => {
-    const carousel = document.getElementById("carousel");
+    const carousel = document.getElementById(`carousel-${header}`);
     if (carousel) {
       carousel.style.scrollBehavior = "smooth";
       if (direction === "left") {
@@ -36,7 +36,7 @@ export const Carousel = ({ items, width = "100%", header }: CarouselProps) => {
   };
 
   return (
-    <Box width={width} maxWidth="100vw">
+    <Box width={width} maxWidth="100vw" height="100%">
       <Flex direction="row" justify="space-between">
         <Text fontSize="2xl" fontWeight="bold">
           {header}
@@ -46,7 +46,6 @@ export const Carousel = ({ items, width = "100%", header }: CarouselProps) => {
             aria-label="Previous"
             icon={<ChevronLeft />}
             variant="ghost"
-            colorScheme="blackAlpha"
             size="lg"
             onClick={() => shiftCarousel("left")}
           />
@@ -54,7 +53,6 @@ export const Carousel = ({ items, width = "100%", header }: CarouselProps) => {
             aria-label="Next"
             icon={<ChevronRight />}
             variant="ghost"
-            colorScheme="blackAlpha"
             size="lg"
             onClick={() => shiftCarousel("right")}
           />
@@ -66,7 +64,7 @@ export const Carousel = ({ items, width = "100%", header }: CarouselProps) => {
         overflowX="scroll"
         overflowY="hidden"
         gap="3"
-        id="carousel"
+        id={`carousel-${header}`}
         sx={{
           "&::-webkit-scrollbar": {
             display: "none",

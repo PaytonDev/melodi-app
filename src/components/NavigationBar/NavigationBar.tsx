@@ -1,6 +1,8 @@
 import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import { top_level_nav, my_collection_nav, playlists } from "./data";
 import s from "./navigation-bar.module.css";
+import { Link as ReactRouterLink } from "react-router-dom";
+import { Link as ChakraLink } from "@chakra-ui/react";
 
 export const NavigationBar = () => {
   return (
@@ -21,18 +23,22 @@ export const NavigationBar = () => {
         </Flex>
         <Flex direction="column" justify="stretch" marginTop={8} width="100%">
           {top_level_nav.map((item) => (
-            <Button
+            <ChakraLink
               key={item.id}
               variant="ghost"
+              as={ReactRouterLink}
+              to={item.path}
               size="sm"
               marginTop={2}
+              padding={2}
               height="2.5rem"
-              className={s["menu-item"]}
+              color="teal.200"
+              className={s["menu-item-link"]}
             >
               <Flex direction="row" justify="start" width="100%">
                 <Text> {item.name}</Text>
               </Flex>
-            </Button>
+            </ChakraLink>
           ))}
         </Flex>
         <Flex direction="column" justify="stretch" marginTop={8} width="100%">

@@ -56,7 +56,7 @@ export const artistData: Artist[] = [
       {
         id: "1",
         name: "Positions",
-        image: "https://i.scdn.co/image/ab67616d0000b273c4a4e8b9d6e0b9e4a8c1c1a5",
+        image: "https://upload.wikimedia.org/wikipedia/en/a/a0/Ariana_Grande_-_Positions.png",
         releaseDate: "2020-10-30",
         songs: [
           {
@@ -95,7 +95,8 @@ export const artistData: Artist[] = [
       {
         id: "1",
         name: "Lemonade",
-        image: "https://i.scdn.co/image/ab67616d0000b273c4a4e8b9d6e0b9e4a8c1c1a5",
+        image:
+          "https://upload.wikimedia.org/wikipedia/en/5/53/Beyonce_-_Lemonade_%28Official_Album_Cover%29.png",
         releaseDate: "2016-04-23",
         songs: [
           {
@@ -119,6 +120,46 @@ export const artistData: Artist[] = [
             title: "Don't Hurt Yourself",
             album: "Lemonade",
             artistName: "Beyoncé",
+            duration: 254000, // 4:14 in ms
+            url: "https://p.scdn.co/mp3-preview/6b2f7c3d2e1d3e5f9f5f4e5f6c3d4b4b3d6b4f5b?cid=774b29d4f13844c495f206cafdad9c86",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "4",
+    name: "Billie Eilish",
+    image: "https://i.scdn.co/image/ab6761610000e5ebc4a4e8b9d6e0b9e4a8c1c1a5",
+    albums: [
+      {
+        id: "1",
+        name: "When We All Fall Asleep, Where Do We Go?",
+        image:
+          "https://upload.wikimedia.org/wikipedia/en/3/38/When_We_All_Fall_Asleep%2C_Where_Do_We_Go%3F.png",
+        releaseDate: "2019-03-29",
+        songs: [
+          {
+            id: "1",
+            title: "bad guy",
+            album: "When We All Fall Asleep, Where Do We Go?",
+            artistName: "Billie Eilish",
+            duration: 228000, // 3:48 in ms
+            url: "https://p.scdn.co/mp3-preview/0c9e6a2d2c9c5e0f4a9b1d3f7c5e3d3b5b9b4f5b?cid=774b29d4f13844c495f206cafdad9c86",
+          },
+          {
+            id: "2",
+            title: "xanny",
+            album: "When We All Fall Asleep, Where Do We Go?",
+            artistName: "Billie Eilish",
+            duration: 224000, // 3:44 in ms
+            url: "https://p.scdn.co/mp3-preview/7d4f6d7e9f8a3a0f9f3e5a6f3c5d2a4b4e6b4f5b?cid=774b29d4f13844c495f206cafdad9c86",
+          },
+          {
+            id: "3",
+            title: "you should see me in a crown",
+            album: "When We All Fall Asleep, Where Do We Go?",
+            artistName: "Billie Eilish",
             duration: 254000, // 4:14 in ms
             url: "https://p.scdn.co/mp3-preview/6b2f7c3d2e1d3e5f9f5f4e5f6c3d4b4b3d6b4f5b?cid=774b29d4f13844c495f206cafdad9c86",
           },

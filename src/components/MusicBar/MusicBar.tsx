@@ -73,8 +73,8 @@ export const MusicBar = () => {
       left={0}
       width="100%"
       height="100px"
+      bg="gray.800"
       paddingX={4}
-      paddingY={2}
       zIndex={10}
     >
       <Flex

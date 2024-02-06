@@ -36,7 +36,9 @@ export const MusicCard = ({
           </Box>
           <Stack direction="column" spacing={1} mt="4">
             <Text fontWeight="bold">{header}</Text>
-            <Text fontWeight="medium">{subheader}</Text>
+            <Text fontWeight="medium" noOfLines={1}>
+              {subheader}
+            </Text>
             <Text fontSize="xs" fontWeight="light">
               {description}
             </Text>
